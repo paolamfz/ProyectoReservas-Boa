@@ -23,4 +23,10 @@ export default class BookingPage {
     const confirmationMessage = await this.page.textContent(Selectors.BookingPage.confirmationMessage);
     return confirmationMessage;
   }
+
+  async getErrorMessage() {
+    await this.page.waitForSelector(Selectors.BookingPage.errorMessage);
+    const errorMessage = await this.page.textContent(Selectors.BookingPage.errorMessage);
+    return errorMessage;
+  }
 }

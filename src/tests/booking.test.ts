@@ -43,5 +43,25 @@ describe('Boliviana de Aviación Booking Flow', () => {
     const confirmationMessage = await bookingPage.getBookingConfirmation();
     expect(confirmationMessage).toBeDefined();
   });
+
+  it('should show error when entering incomplete phone number', async () => {
+    const homePage = new HomePage(page);
+    const bookingPage = new BookingPage(page);
+    const choosingFlight = new ChoosingFlight(page);
+
+    await homePage.navigate();
+    await homePage.searchFlights('COCHABAMBA', 'LA PAZ');
+    await choosingFlight.chooseFlights();
+    await bookingPage.enterBookingDetails(
+      'Paola', 
+      'Montano', 
+      'montanofernandezpaola@gmail.com',
+      '7937',
+      'CI',
+      '9315248cb');
+
+      const errorMessage = await bookingPage.getErrorMessage();
+      expect(errorMessage).toBeDefined();
+  });
 });
 

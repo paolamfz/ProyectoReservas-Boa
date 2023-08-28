@@ -23,6 +23,7 @@ export const Selectors = {
       documentId: '#tbx_px1_documento',
       bookButton: '//div[2]/div[1]/div[4]/div/table//tr//div',
       confirmationMessage: '#lbl_codigo_reserva',
+      errorMessage: '#simple_dialog'
     },
   };
   
