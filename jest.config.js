@@ -1,7 +1,7 @@
 module.exports = {
-    preset: '@playwright/test',
-    testMatch: ['**/Test/**/*.spec.ts'],
-    transform: {
-        '^.+\\.tsx?$': 'babel-jest',
-      },
+  preset: 'jest-playwright-preset',
+  testMatch: ['**/*.test.ts'],
+  transform: {
+      '^.+\\.tsx?$': 'babel-jest',
+    },
 };

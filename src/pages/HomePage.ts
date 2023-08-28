@@ -9,13 +9,13 @@ export default class HomePage {
   }
 
   async navigate() {
-    await this.page.goto('https://www.boliviana.cob.bo/');
+    await this.page.goto('https://www.boa.bo/');
     await this.page.waitForLoadState('domcontentloaded');
   }
 
   async searchFlights(origin: string, destination: string ) {
-    await this.page.fill(Selectors.HomePage.originInput, origin);
-    await this.page.fill(Selectors.HomePage.destinationInput, destination);
+    await this.page.selectOption(Selectors.HomePage.originInput, origin);
+    await this.page.selectOption(Selectors.HomePage.destinationInput, destination);
     await this.page.click(Selectors.HomePage.onlyOneWay);
     await this.page.click(Selectors.HomePage.calendar);
     await this.page.locator(Selectors.HomePage.dateInput).nth(1).click();

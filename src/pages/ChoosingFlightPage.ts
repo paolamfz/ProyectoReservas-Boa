@@ -9,6 +9,7 @@ export default class ChoosingFlight {
   }
 
   async chooseFlights() {
+    await this.page.waitForTimeout(6000);
     await this.page.click(Selectors.ChoosingFlight.chosenFlight);
     await this.page.click(Selectors.ChoosingFlight.chosenTicket);
     await this.page.click(Selectors.ChoosingFlight.confirmTicket);
